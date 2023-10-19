@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" , "src/assets" , "src/icons" , "src/components" , "src/types" ] , "pkgs" : [ [ "@rescript/react" , "/Users/supasin/Projects/Portfolio/Portfolio-rescripts/Port-rescript/node_modules/@rescript/react" ] ] , "generated" : [] }

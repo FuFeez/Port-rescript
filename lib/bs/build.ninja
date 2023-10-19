@@ -1,0 +1,86 @@
+rescript = 1
+g_finger := /Users/supasin/Projects/Portfolio/Portfolio-rescripts/Port-rescript/node_modules/@rescript/react/lib/ocaml/install.stamp
+rule astj
+  command = /Users/supasin/Projects/Portfolio/Portfolio-rescripts/Port-rescript/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4 -bs-jsx 4 -bs-jsx-mode automatic  -absname -bs-ast -o $out $i
+o src/App.ast : astj ../../src/App.res
+rule deps
+  command = /Users/supasin/Projects/Portfolio/Portfolio-rescripts/Port-rescript/node_modules/rescript/darwinarm64/bsb_helper.exe -hash 83f21074cea7e4ab9521cc26dfffcc62 $in
+  restat = 1
+o src/App.d : deps src/App.ast
+rule mij
+  command = /Users/supasin/Projects/Portfolio/Portfolio-rescripts/Port-rescript/node_modules/rescript/darwinarm64/bsc.exe -I src/types -I src/components -I src/icons -I src/assets -I src -I /Users/supasin/Projects/Portfolio/Portfolio-rescripts/Port-rescript/node_modules/@rescript/react/lib/ocaml   -bs-package-name Port-rescript -bs-package-output es6:lib/es6/$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/App.cmj src/App.cmi ../es6/src/App.bs.js : mij src/App.ast
+o src/main.ast : astj ../../src/main.res
+o src/main.d : deps src/main.ast
+o src/main.cmj src/main.cmi ../es6/src/main.bs.js : mij src/main.ast
+o src/icons/Lottie.ast : astj ../../src/icons/Lottie.res
+o src/icons/Lottie.d : deps src/icons/Lottie.ast
+o src/icons/Lottie.cmj src/icons/Lottie.cmi ../es6/src/icons/Lottie.bs.js : mij src/icons/Lottie.ast
+o src/icons/Particles.ast : astj ../../src/icons/Particles.res
+o src/icons/Particles.d : deps src/icons/Particles.ast
+o src/icons/Particles.cmj src/icons/Particles.cmi ../es6/src/icons/Particles.bs.js : mij src/icons/Particles.ast
+o src/icons/DeleteIcon.ast : astj ../../src/icons/DeleteIcon.res
+o src/icons/DeleteIcon.d : deps src/icons/DeleteIcon.ast
+o src/icons/DeleteIcon.cmj src/icons/DeleteIcon.cmi ../es6/src/icons/DeleteIcon.bs.js : mij src/icons/DeleteIcon.ast
+o src/components/Input.ast : astj ../../src/components/Input.res
+o src/components/Input.d : deps src/components/Input.ast
+o src/components/Input.cmj src/components/Input.cmi ../es6/src/components/Input.bs.js : mij src/components/Input.ast
+o src/components/Radio.ast : astj ../../src/components/Radio.res
+o src/components/Radio.d : deps src/components/Radio.ast
+o src/components/Radio.cmj src/components/Radio.cmi ../es6/src/components/Radio.bs.js : mij src/components/Radio.ast
+o src/components/Button.ast : astj ../../src/components/Button.res
+o src/components/Button.d : deps src/components/Button.ast
+o src/components/Button.cmj src/components/Button.cmi ../es6/src/components/Button.bs.js : mij src/components/Button.ast
+o src/components/SvgIcon.ast : astj ../../src/components/SvgIcon.res
+o src/components/SvgIcon.d : deps src/components/SvgIcon.ast
+o src/components/SvgIcon.cmj src/components/SvgIcon.cmi ../es6/src/components/SvgIcon.bs.js : mij src/components/SvgIcon.ast
+o src/components/FormGroup.ast : astj ../../src/components/FormGroup.res
+o src/components/FormGroup.d : deps src/components/FormGroup.ast
+o src/components/FormGroup.cmj src/components/FormGroup.cmi ../es6/src/components/FormGroup.bs.js : mij src/components/FormGroup.ast
+o src/components/FormLabel.ast : astj ../../src/components/FormLabel.res
+o src/components/FormLabel.d : deps src/components/FormLabel.ast
+o src/components/FormLabel.cmj src/components/FormLabel.cmi ../es6/src/components/FormLabel.bs.js : mij src/components/FormLabel.ast
+o src/components/InputBase.ast : astj ../../src/components/InputBase.res
+o src/components/InputBase.d : deps src/components/InputBase.ast
+o src/components/InputBase.cmj src/components/InputBase.cmi ../es6/src/components/InputBase.bs.js : mij src/components/InputBase.ast
+o src/components/ButtonBase.ast : astj ../../src/components/ButtonBase.res
+o src/components/ButtonBase.d : deps src/components/ButtonBase.ast
+o src/components/ButtonBase.cmj src/components/ButtonBase.cmi ../es6/src/components/ButtonBase.bs.js : mij src/components/ButtonBase.ast
+o src/components/RadioGroup.ast : astj ../../src/components/RadioGroup.res
+o src/components/RadioGroup.d : deps src/components/RadioGroup.ast
+o src/components/RadioGroup.cmj src/components/RadioGroup.cmi ../es6/src/components/RadioGroup.bs.js : mij src/components/RadioGroup.ast
+o src/components/Typography.ast : astj ../../src/components/Typography.res
+o src/components/Typography.d : deps src/components/Typography.ast
+o src/components/Typography.cmj src/components/Typography.cmi ../es6/src/components/Typography.bs.js : mij src/components/Typography.ast
+o src/components/ButtonGroup.ast : astj ../../src/components/ButtonGroup.res
+o src/components/ButtonGroup.d : deps src/components/ButtonGroup.ast
+o src/components/ButtonGroup.cmj src/components/ButtonGroup.cmi ../es6/src/components/ButtonGroup.bs.js : mij src/components/ButtonGroup.ast
+o src/components/FormControl.ast : astj ../../src/components/FormControl.res
+o src/components/FormControl.d : deps src/components/FormControl.ast
+o src/components/FormControl.cmj src/components/FormControl.cmi ../es6/src/components/FormControl.bs.js : mij src/components/FormControl.ast
+o src/components/FormControlLabel.ast : astj ../../src/components/FormControlLabel.res
+o src/components/FormControlLabel.d : deps src/components/FormControlLabel.ast
+o src/components/FormControlLabel.cmj src/components/FormControlLabel.cmi ../es6/src/components/FormControlLabel.bs.js : mij src/components/FormControlLabel.ast
+o src/types/Sx.ast : astj ../../src/types/Sx.res
+o src/types/Sx.d : deps src/types/Sx.ast
+o src/types/Sx.cmj src/types/Sx.cmi ../es6/src/types/Sx.bs.js : mij src/types/Sx.ast
+o src/types/System.ast : astj ../../src/types/System.res
+o src/types/System.d : deps src/types/System.ast
+o src/types/System.cmj src/types/System.cmi ../es6/src/types/System.bs.js : mij src/types/System.ast
+o src/types/Overrides.ast : astj ../../src/types/Overrides.res
+o src/types/Overrides.d : deps src/types/Overrides.ast
+o src/types/Overrides.cmj src/types/Overrides.cmi ../es6/src/types/Overrides.bs.js : mij src/types/Overrides.ast
+o src/types/Transition.ast : astj ../../src/types/Transition.res
+o src/types/Transition.d : deps src/types/Transition.ast
+o src/types/Transition.cmj src/types/Transition.cmi ../es6/src/types/Transition.bs.js : mij src/types/Transition.ast
+o src/types/CommonProps.ast : astj ../../src/types/CommonProps.res
+o src/types/CommonProps.d : deps src/types/CommonProps.ast
+o src/types/CommonProps.cmj src/types/CommonProps.cmi ../es6/src/types/CommonProps.bs.js : mij src/types/CommonProps.ast
+o src/types/UsePagination.ast : astj ../../src/types/UsePagination.res
+o src/types/UsePagination.d : deps src/types/UsePagination.ast
+o src/types/UsePagination.cmj src/types/UsePagination.cmi ../es6/src/types/UsePagination.bs.js : mij src/types/UsePagination.ast
+o src/types/OverridableComponent.ast : astj ../../src/types/OverridableComponent.res
+o src/types/OverridableComponent.d : deps src/types/OverridableComponent.ast
+o src/types/OverridableComponent.cmj src/types/OverridableComponent.cmi ../es6/src/types/OverridableComponent.bs.js : mij src/types/OverridableComponent.ast
